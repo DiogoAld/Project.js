@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pagina</title>
+    </head>
+    <body>
+        <form id="formulario" method="POST">
+            <label for="nome">Nome: </label>
+            <input type="text" id="inserir">
+            <button type="submit" id="but">Enviar</button>
+        </form>
+            <button type="submit" id="sortear">Sortear</button>
+        <script>
+            const sorteio=document.getElementById("sortear")
+            const botao=document.getElementById("but")
+            const inserido=document.getElementById("inserir")
+            let lista=[]
+            botao.addEventListener('click', function(event) {
+                event.preventDefault()
+                lista.push(inserido.value) 
+            })
+            sorteio.addEventListener('click', function() {
+                max=lista.length
+                console.log(lista[Math.floor(Math.random() * max)])
+            })
+        </script>
+    </body>
+</html>
